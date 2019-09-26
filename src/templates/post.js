@@ -20,7 +20,7 @@ export const disqusConfig = ({ slug, title }) => ({
  */
 const Post = ({ data, location }) => {
     const post = data.ghostPost;
-
+    const { title, slug } = post;
     return (
         <>
             <MetaData data={data} location={location} type="article" />
@@ -46,7 +46,9 @@ const Post = ({ data, location }) => {
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
-                            <DiscussionEmbed {...disqusConfig({post.slug, post.title} )} />
+                            <DiscussionEmbed
+                                {...disqusConfig({ slug, title })}
+                            />
                         </section>
                     </article>
                 </div>
