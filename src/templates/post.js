@@ -46,7 +46,7 @@ const Post = ({ data, location }) => {
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
-                            <DiscussionEmbed {...disqusConfig} />
+                            <DiscussionEmbed {...disqusConfig( post.slug, post.title )} />
                         </section>
                     </article>
                 </div>
