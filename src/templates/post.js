@@ -7,10 +7,10 @@ import { DiscussionEmbed } from "disqus-react";
 import { Layout } from "../components/common";
 import { MetaData } from "../components/common/meta";
 
-const disqusConfig = {
+export const disqusConfig = ({ slug, title }) => ({
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: slug, title }
-};
+});
 
 /**
  * Single post view (/:slug)
